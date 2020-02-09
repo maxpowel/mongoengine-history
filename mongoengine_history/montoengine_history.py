@@ -44,7 +44,7 @@ def track_changes(sender, document, *args, **kwargs):
                 formatted_data = []
                 for i in data:
                     formatted_data.append({
-                        "index": i[0],
+                        "key": i[0],
                         "value": i[1]
                     })
                 History(
@@ -79,9 +79,9 @@ def load_history(document, since=None, until=None):
             data = []
             for i in h.data["items"]:
                 if isinstance(i["value"], dict):
-                    data.append((i["index"], (list(i["value"].items()))))
+                    data.append((i["key"], (list(i["value"].items()))))
                 else:
-                    data.append((i["index"], i["value"]))
+                    data.append((i["key"], i["value"]))
             log.append((h.action, path, data))
 
     return log

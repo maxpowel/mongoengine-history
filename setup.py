@@ -6,7 +6,7 @@ with open('requirements.txt') as fp:
 setup(
     name='mongoengine-history',
     packages=find_packages(),
-    version='1.0',
+    version='1.1',
     description='Track the documents changes',
     author='Álvaro García Gómez',
     author_email='maxpowel@gmail.com',
